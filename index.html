@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Quirky Thinkers — Marketing with a twist of creativity</title>
+<meta name="description" content="The Quirky Thinkers is a digital marketing studio. Strategy, content systems, Meta ads, SEO and articles — tailor-made for your brand, never cut-and-paste.">
+<meta property="og:title" content="The Quirky Thinkers — Marketing with a twist of creativity">
+<meta property="og:description" content="Digital marketing doesn't have to be difficult. Strategy, content and ads built around your brand — not a template.">
+<meta property="og:image" content="qt-banner.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="qt-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Karla:ital,wght@0,300..700;1,300..700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --brand:#0097B2;
+  --brand-deep:#00728A;
+  --ink:#08323C;
+  --ink-soft:#3D6570;
+  --muted:#6D8B93;
+  --paper:#F1F8F9;
+  --card:#FFFFFF;
+  --glow:#E8E077;
+  --line:rgba(8,50,60,.14);
+  --line-light:rgba(255,255,255,.28);
+  --shadow:0 18px 40px -28px rgba(8,50,60,.6);
+  --wrap:1140px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Karla",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:clamp(16px,1.05vw,18px);line-height:1.65;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{width:min(100% - 2.5rem,var(--wrap));margin-inline:auto}
+
+h1,h2,h3{
+  font-family:"Cormorant Garamond","Georgia",serif;
+  font-weight:600;line-height:1.05;letter-spacing:-.005em;margin:0;
+}
+h2 em{font-style:italic;font-weight:600;color:var(--brand)}
+.eyebrow{
+  font-family:"Space Grotesk",monospace;font-size:.7rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--muted);margin:0 0 1.3rem;
+}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:.7rem 1.1rem;z-index:99;border-radius:0 0 8px 0}
+.skip:focus{left:0}
+:focus-visible{outline:3px solid var(--glow);outline-offset:3px;border-radius:4px}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:40;background:rgba(241,248,249,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.7rem 0}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+.brand img{width:40px;height:40px;border-radius:9px}
+.brand b{
+  font-family:"Cormorant Garamond",serif;font-weight:600;font-size:1.2rem;
+  letter-spacing:.01em;line-height:1;
+}
+.nav-links{display:flex;gap:1.4rem;list-style:none;margin:0;padding:0}
+.nav-links a{font-family:"Space Grotesk",monospace;font-size:.74rem;letter-spacing:.11em;text-transform:uppercase;text-decoration:none;color:var(--ink-soft)}
+.nav-links a:hover{color:var(--brand)}
+@media(max-width:780px){.nav-links{display:none}}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;overflow:hidden;color:#fff;
+  background:var(--brand);
+  padding:clamp(3rem,7vw,5rem) 0 clamp(3.5rem,8vw,6rem);
+}
+.hero::before{
+  content:"";position:absolute;inset:-20% -10%;pointer-events:none;
+  background-image:repeating-radial-gradient(circle at 0 0,rgba(255,255,255,.22) 0 1.2px,transparent 1.2px 3px);
+  background-size:7px 7px;
+  mask-image:repeating-linear-gradient(115deg,#000 0 26px,transparent 26px 74px);
+  -webkit-mask-image:repeating-linear-gradient(115deg,#000 0 26px,transparent 26px 74px);
+  opacity:.55;transform:rotate(-4deg);
+}
+.hero-inner{position:relative;text-align:center}
+.hero .eyebrow{color:rgba(255,255,255,.72)}
+
+/* the lamps — the brand mark, drawn */
+.lamps{width:min(100%,470px);margin:0 auto 1.6rem;display:block;overflow:visible}
+.lamp-line{stroke:#fff;stroke-width:2.1;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.lamp-odd{stroke:var(--glow);stroke-width:2.4}
+.lamp-glow{opacity:0;animation:lightUp 1.1s ease-out .9s forwards}
+.lamp-tilt{transform-box:view-box;transform-origin:432px 4px;animation:settle 1.5s cubic-bezier(.3,.9,.3,1) .25s both}
+@keyframes lightUp{to{opacity:1}}
+@keyframes settle{
+  0%{transform:rotate(-6deg)}
+  55%{transform:rotate(-44deg)}
+  75%{transform:rotate(-36deg)}
+  100%{transform:rotate(-40deg)}
+}
+
+.hero h1{
+  font-size:clamp(2.6rem,7.6vw,4.6rem);margin:0;font-weight:500;
+}
+.hero h1 .script{display:block;font-style:italic;font-weight:600}
+.hero h1 .caps{
+  display:block;margin-top:.35rem;
+  font-size:.4em;letter-spacing:.19em;text-transform:uppercase;font-weight:500;
+  color:rgba(255,255,255,.94);
+}
+.lede{max-width:50ch;margin:1.8rem auto 0;font-size:1.06rem;color:rgba(255,255,255,.88)}
+.cta-row{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2.2rem;justify-content:center}
+.btn{
+  display:inline-block;text-decoration:none;font-family:"Space Grotesk",monospace;
+  font-size:.78rem;letter-spacing:.09em;text-transform:uppercase;padding:.9rem 1.6rem;
+  border-radius:999px;border:1.5px solid currentColor;
+  transition:transform .18s ease,background .18s ease,color .18s ease,border-color .18s ease;
+}
+.hero .btn-solid{background:#fff;color:var(--brand-deep);border-color:#fff}
+.hero .btn-solid:hover{background:var(--glow);border-color:var(--glow);color:var(--ink);transform:translateY(-2px)}
+.hero .btn-ghost{color:#fff}
+.hero .btn-ghost:hover{background:#fff;color:var(--brand-deep);transform:translateY(-2px)}
+.contact .btn-solid{background:var(--brand);color:#fff;border-color:var(--brand)}
+.contact .btn-solid:hover{background:var(--ink);border-color:var(--ink);transform:translateY(-2px)}
+.contact .btn-ghost{color:var(--ink)}
+.contact .btn-ghost:hover{background:var(--ink);color:#fff;transform:translateY(-2px)}
+
+/* ---------- marquee ---------- */
+.marquee{background:var(--ink);color:#fff;overflow:hidden;padding:.85rem 0}
+.marquee-track{display:flex;gap:2.5rem;width:max-content;animation:slide 34s linear infinite;font-family:"Space Grotesk",monospace;font-size:.76rem;letter-spacing:.15em;text-transform:uppercase}
+.marquee-track span{white-space:nowrap;opacity:.88}
+.marquee-track span::after{content:" ✦";color:var(--glow)}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- sections ---------- */
+.section{padding:clamp(3.5rem,8vw,6rem) 0}
+.section-head{margin-bottom:clamp(2rem,4vw,3rem)}
+.section-head h2{font-size:clamp(2.1rem,5vw,3.4rem);max-width:20ch}
+.section-head p{max-width:56ch;color:var(--ink-soft);margin:1rem 0 0}
+
+/* ---------- promise ---------- */
+.promise{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem}
+.promise .item{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.5rem}
+.promise h3{font-size:1.35rem;margin-bottom:.5rem}
+.promise p{margin:0;font-size:.93rem;color:var(--ink-soft)}
+.promise .q{font-family:"Space Grotesk",monospace;font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--brand);display:block;margin-bottom:.9rem}
+
+/* ---------- stats ---------- */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.stat{background:var(--paper);padding:1.6rem 1.4rem}
+.stat b{display:block;font-family:"Cormorant Garamond",serif;font-weight:600;font-size:2.7rem;line-height:1;color:var(--brand-deep)}
+.stat span{display:block;margin-top:.5rem;font-size:.86rem;color:var(--muted)}
+
+/* ---------- work ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.2rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.6rem 1.5rem 1.4rem;transition:transform .22s ease,box-shadow .22s ease}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.card .kicker{font-family:"Space Grotesk",monospace;font-size:.64rem;letter-spacing:.15em;text-transform:uppercase;color:var(--brand)}
+.card h3{font-size:1.7rem;margin:.5rem 0 .7rem}
+.card p{margin:0;color:var(--ink-soft);font-size:.95rem}
+.result{margin-top:1.1rem;padding-top:1rem;border-top:1px dashed var(--line);font-family:"Space Grotesk",monospace;font-size:.8rem;color:var(--ink)}
+.result::before{content:"→ ";color:var(--brand)}
+
+/* ---------- services ---------- */
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem 2.5rem}
+.service h3{font-size:1.4rem;margin-bottom:.4rem}
+.service p{margin:0;color:var(--ink-soft);font-size:.95rem}
+.service .rule{width:32px;height:3px;border-radius:2px;margin-bottom:.9rem;background:var(--brand)}
+.service:nth-child(2n) .rule{background:var(--glow)}
+
+/* the planned week — proof of method */
+.week{margin-top:clamp(2.5rem,5vw,3.5rem);background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.5rem}
+.week-label{font-family:"Space Grotesk",monospace;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 1rem}
+.week-strip{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:.5rem;list-style:none;margin:0;padding:0}
+.cell{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:.7rem .55rem;min-height:86px;display:flex;flex-direction:column;justify-content:space-between}
+.day{font-family:"Space Grotesk",monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.tag{font-family:"Space Grotesk",monospace;font-size:.68rem;font-weight:500;padding:.26rem .48rem;border-radius:6px;align-self:flex-start;line-height:1.2}
+.t-reel{background:rgba(0,151,178,.13);color:var(--brand-deep)}
+.t-carousel{background:rgba(232,224,119,.4);color:#5F5A0A}
+.t-story{background:rgba(8,50,60,.08);color:var(--ink)}
+.t-rest{background:transparent;color:var(--muted);border:1px dashed var(--line)}
+.week-note{margin:1rem 0 0;font-size:.87rem;color:var(--muted);max-width:52ch}
+@media(max-width:780px){
+  .week-strip{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .cell{min-height:74px}
+  .cell:nth-child(n+5){display:none}
+}
+
+/* ---------- studio ---------- */
+.studio{background:var(--ink);color:#fff}
+.studio h2{color:#fff}
+.studio h2 em{color:var(--glow)}
+.studio .eyebrow{color:rgba(255,255,255,.55)}
+.studio-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+.studio h2{font-size:clamp(2.1rem,5vw,3.4rem)}
+.studio p{color:rgba(255,255,255,.8)}
+.panel{border:1px solid var(--line-light);border-radius:14px;padding:1.6rem}
+.panel h4{font-family:"Space Grotesk",monospace;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--glow);margin:0 0 1rem;font-weight:500}
+.panel ul{list-style:none;margin:0;padding:0;font-size:.92rem}
+.panel li{padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.86)}
+.panel li:last-child{border-bottom:0}
+.panel li small{display:block;color:rgba(255,255,255,.5);font-family:"Space Grotesk",monospace;font-size:.64rem;letter-spacing:.1em;text-transform:uppercase}
+.panel .spacer{margin-top:2rem}
+.founder{margin-top:2rem;font-size:.95rem}
+.founder strong{color:#fff}
+@media(max-width:860px){.studio-grid{grid-template-columns:1fr}}
+
+/* ---------- testimonials ---------- */
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem}
+.quote{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.7rem 1.5rem;margin:0}
+.quote blockquote{margin:0;font-family:"Cormorant Garamond",serif;font-size:1.3rem;line-height:1.4;color:var(--ink)}
+.quote figcaption{margin-top:1.2rem;font-size:.85rem;color:var(--muted)}
+.quote figcaption b{display:block;color:var(--ink);font-size:.92rem;font-weight:700}
+.quote a{text-decoration:none;color:var(--brand)}
+
+/* ---------- contact ---------- */
+.contact{text-align:center}
+.contact h2{margin-inline:auto;max-width:18ch;font-size:clamp(2.2rem,5.5vw,3.6rem)}
+.contact p{max-width:46ch;margin:1.2rem auto 0;color:var(--ink-soft)}
+
+/* ---------- footer ---------- */
+.footer{border-top:1px solid var(--line);padding:2rem 0;font-size:.82rem;color:var(--muted)}
+.footer-inner{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center}
+.footer a{text-decoration:none;margin-right:1.1rem}
+.footer a:hover{color:var(--brand)}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important}
+  .lamp-glow{opacity:1}
+  .lamp-tilt{animation:none;transform:rotate(-40deg)}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top">
+      <img src="qt-logo.png" alt="">
+      <b>The Quirky Thinkers</b>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#services">What we do</a></li>
+      <li><a href="#studio">Studio</a></li>
+      <li><a href="#voices">Clients</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="wrap hero-inner">
+
+    <!-- signature: four lamps in line, one hung at its own angle — and the only one lit -->
+    <svg class="lamps" viewBox="0 0 520 190" aria-hidden="true">
+      <defs>
+        <radialGradient id="bulbGlow">
+          <stop offset="0%" stop-color="#E8E077" stop-opacity=".95"/>
+          <stop offset="45%" stop-color="#E8E077" stop-opacity=".35"/>
+          <stop offset="100%" stop-color="#E8E077" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+
+      <g class="lamp-line">
+        <!-- lamp 1 -->
+        <path d="M70 4 V70"/><path d="M61 70 h18 v11 h-18 z"/>
+        <path d="M36 112 L58 81 H82 L104 112 Z"/><circle cx="70" cy="122" r="9"/>
+        <!-- lamp 2 -->
+        <path d="M160 4 V70"/><path d="M151 70 h18 v11 h-18 z"/>
+        <path d="M126 112 L148 81 H172 L194 112 Z"/><circle cx="160" cy="122" r="9"/>
+        <!-- lamp 3 -->
+        <path d="M250 4 V70"/><path d="M241 70 h18 v11 h-18 z"/>
+        <path d="M216 112 L238 81 H262 L284 112 Z"/><circle cx="250" cy="122" r="9"/>
+        <!-- lamp 4 -->
+        <path d="M340 4 V70"/><path d="M331 70 h18 v11 h-18 z"/>
+        <path d="M306 112 L328 81 H352 L374 112 Z"/><circle cx="340" cy="122" r="9"/>
+      </g>
+
+      <!-- the quirky one -->
+      <g class="lamp-tilt">
+        <circle class="lamp-glow" cx="432" cy="122" r="46" fill="url(#bulbGlow)" stroke="none"/>
+        <g class="lamp-line lamp-odd">
+          <path d="M432 4 V70"/><path d="M423 70 h18 v11 h-18 z"/>
+          <path d="M398 112 L420 81 H444 L466 112 Z"/><circle cx="432" cy="122" r="9"/>
+        </g>
+      </g>
+    </svg>
+
+    <h1>
+      <span class="script">Marketing</span>
+      <span class="caps">with a twist of creativity.</span>
+    </h1>
+    <p class="lede">Digital marketing doesn't have to be difficult. We build the strategy, the content system and the ads around your brand — then show you exactly what they did.</p>
+    <div class="cta-row">
+      <a class="btn btn-solid" href="#work">See our work</a>
+      <a class="btn btn-ghost" href="#contact">Work with us</a>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Instagram strategy</span><span>Meta ads</span><span>Content planning</span><span>Reels &amp; short-form</span><span>Brand identity</span><span>Articles &amp; SEO</span><span>Analytics &amp; reporting</span><span>Community management</span><span>Caption writing</span><span>Account management</span>
+    <span>Instagram strategy</span><span>Meta ads</span><span>Content planning</span><span>Reels &amp; short-form</span><span>Brand identity</span><span>Articles &amp; SEO</span><span>Analytics &amp; reporting</span><span>Community management</span><span>Caption writing</span><span>Account management</span>
+  </div>
+</div>
+
+<!-- ================= PROMISE ================= -->
+<section class="section">
+  <div class="wrap">
+    <div class="promise">
+      <div class="item">
+        <span class="q">Lost in the digital maze?</span>
+        <h3>A roadmap, not a guess</h3>
+        <p>We don't hand over a plan and disappear. We navigate the ins and outs alongside you.</p>
+      </div>
+      <div class="item">
+        <span class="q">Tired of cut-and-paste?</span>
+        <h3>Built for your brand</h3>
+        <p>Every business is different, so every strategy is made for your company and how it keeps changing.</p>
+      </div>
+      <div class="item">
+        <span class="q">Left in the dark?</span>
+        <h3>You see everything</h3>
+        <p>Complete transparency, real-time updates and a month-end report that actually explains itself.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STATS ================= -->
+<!-- REPLACE with figures you can screenshot from Insights / Ads Manager -->
+<section class="section">
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat"><b>70K+</b><span>Organic views generated for a single school brand</span></div>
+      <div class="stat"><b>7+</b><span>Brands actively managed</span></div>
+      <div class="stat"><b>5</b><span>Industries — education, apparel, digital products, pharma, marketplace</span></div>
+      <div class="stat"><b>6+ yrs</b><span>Client and account management behind the creative</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WORK ================= -->
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Case studies</p>
+      <h2>Work that got <em>real results.</em></h2>
+    </div>
+    <div class="cards">
+
+      <article class="card">
+        <p class="kicker">Luxury apparel</p>
+        <h3>Concepts by CK</h3>
+        <p>We ran the full Instagram launch for a women's luxury apparel label — exhibition content, festival campaigns and organic growth from a standing start.</p>
+        <p class="result">Exhibition sold out within the first month of launch</p>
+      </article>
+
+      <article class="card">
+        <p class="kicker">Education</p>
+        <h3>Deep Memorial Public School</h3>
+        <p>We built the school's Instagram from zero: parent-facing storytelling, special-day posts, event films and annual admissions ad campaigns.</p>
+        <p class="result">70,000+ organic views on @deepmemorial_</p>
+      </article>
+
+      <article class="card">
+        <p class="kicker">Digital products</p>
+        <h3>Nivora Galerie</h3>
+        <p>Logo and brand identity first, then everything that had to follow it — palette, content pillars, a 90-day calendar, Reel scripts and a product launch system.</p>
+        <p class="result">A complete brand system: identity, content, community</p>
+      </article>
+
+      <article class="card">
+        <p class="kicker">Marketplace</p>
+        <h3>Tarienne</h3>
+        <p>Brand identity and strategy for a bilingual English–Malayalam vendor marketplace: naming the voice, mapping two very different audiences, and building the launch content plan.</p>
+        <p class="result">Identity and go-to-market strategy, built from scratch</p>
+      </article>
+
+      <article class="card">
+        <p class="kicker">Studio lab</p>
+        <h3>The Libran Soul</h3>
+        <p>Our own testing ground. A Reels-first aesthetic page where we trial hooks, formats and save-driven strategy before running them on a client account.</p>
+        <p class="result">Where the playbook gets pressure-tested</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What we do</p>
+      <h2>Everything, or exactly <em>one thing.</em></h2>
+      <p>Some brands need the whole system built. Others have one stubborn problem. Both are fine.</p>
+    </div>
+    <div class="services">
+      <div class="service"><div class="rule"></div><h3>Instagram strategy &amp; growth</h3><p>Content pillars, editorial calendars, Reels scripting and algorithm-aligned growth planning.</p></div>
+      <div class="service"><div class="rule"></div><h3>Content &amp; copywriting</h3><p>Captions, hooks, carousel copy and scripts that sound human — and actually get saved.</p></div>
+      <div class="service"><div class="rule"></div><h3>Meta ads management</h3><p>Campaign setup, audience targeting, ad copy and performance tracking across Facebook and Instagram.</p></div>
+      <div class="service"><div class="rule"></div><h3>Brand identity &amp; systems</h3><p>Logo, visual language, tone of voice and content system design for new or growing brands.</p></div>
+      <div class="service"><div class="rule"></div><h3>Articles &amp; long-form</h3><p>We write articles too — blogs, SEO content and brand journalism across wellness, lifestyle, education and tech. Researched, human, written to actually be read.</p></div>
+      <div class="service"><div class="rule"></div><h3>SEO &amp; optimisation</h3><p>On-page SEO, keyword research and site audits for WordPress, Shopify and Webflow.</p></div>
+      <div class="service"><div class="rule"></div><h3>Community management</h3><p>DMs, comments and the slow work of building an audience that actually cares.</p></div>
+      <div class="service"><div class="rule"></div><h3>Reporting you can read</h3><p>Month-end reports that say what happened, what it cost and what we're changing next.</p></div>
+    </div>
+
+    <div class="week">
+      <p class="week-label">What a planned week looks like</p>
+      <ul class="week-strip">
+        <li class="cell"><span class="day">Mon</span><span class="tag t-reel">Reel</span></li>
+        <li class="cell"><span class="day">Tue</span><span class="tag t-carousel">Carousel</span></li>
+        <li class="cell"><span class="day">Wed</span><span class="tag t-story">Story set</span></li>
+        <li class="cell"><span class="day">Thu</span><span class="tag t-carousel">Meta ad</span></li>
+        <li class="cell"><span class="day">Fri</span><span class="tag t-reel">Reel</span></li>
+        <li class="cell"><span class="day">Sat</span><span class="tag t-story">Community</span></li>
+        <li class="cell"><span class="day">Sun</span><span class="tag t-rest">Breathe</span></li>
+      </ul>
+      <p class="week-note">Most brands don't need more content. They need a week that knows what it's for.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STUDIO ================= -->
+<section class="section studio" id="studio">
+  <div class="wrap studio-grid">
+    <div>
+      <p class="eyebrow">The studio</p>
+      <h2>Quirky is a <em>method,</em> not a mood.</h2>
+      <p style="margin-top:1.6rem">Most brands don't need more content. They need a system that makes content mean something — and someone willing to say when the obvious idea is the wrong one.</p>
+      <p>We came up through client and account management before we came to social, and that order matters. It taught us how to communicate, coordinate and keep people happy under pressure. We bring the same discipline to content calendars, ad campaigns and reporting.</p>
+      <p>We're deliberately small. Your account is run by the people who pitched it, not handed down to a junior, and we take on a limited number of brands at a time so each one gets a real strategy instead of a template.</p>
+      <p class="founder">Founded by <strong>Indu Prazad</strong> — social media strategist, content manager and SEO executive.</p>
+    </div>
+    <div class="panel">
+      <h4>Brands we've worked with</h4>
+      <ul>
+        <li>Concepts by CK <small>Luxury apparel</small></li>
+        <li>Deep Memorial Public School <small>Education</small></li>
+        <li>Nivora Galerie <small>Digital products</small></li>
+        <li>Tarienne <small>Marketplace</small></li>
+        <li>PPS Pharma Service <small>Healthcare</small></li>
+        <li>The Libran Soul <small>Studio lab</small></li>
+      </ul>
+      <h4 class="spacer">How we work</h4>
+      <ul>
+        <li>Data-driven strategies</li>
+        <li>Monitored statistics</li>
+        <li>A dedicated team</li>
+        <li>Month-end reporting</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<!-- First two are from your Canva site — check the attributions match what's live there.
+     Nivora and Tarienne are DRAFTS: get them approved and add a real name and role. -->
+<section class="section" id="voices">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">In their words</p>
+      <h2>What our clients <em>say.</em></h2>
+    </div>
+    <div class="quotes">
+
+      <figure class="quote">
+        <blockquote>“We've worked with other agencies before, but the Quirky Thinkers delivered fresh, creative concepts that blew us away.”</blockquote>
+        <figcaption><b>Deep Memorial Public School</b><a href="https://www.instagram.com/deepmemorial_/" target="_blank" rel="noopener">@deepmemorial_</a></figcaption>
+      </figure>
+
+      <figure class="quote">
+        <blockquote>“The team took our scattered ideas and turned them into a polished brand identity. Their creativity, attention to detail and ability to bring our vision to life made us feel like we finally had a partner who got it.”</blockquote>
+        <figcaption><b>Concepts by CK</b><a href="https://www.instagram.com/concepts_byck/" target="_blank" rel="noopener">@concepts_byck</a></figcaption>
+      </figure>
+
+      <figure class="quote">
+        <blockquote>“They started with our logo and stayed for everything after it — palette, content pillars, a 90-day calendar. We came in with a name and a feeling. We left with a brand that could actually be run.”</blockquote>
+        <figcaption><b>Nivora Galerie</b><a href="https://www.instagram.com/nivoragalerie/" target="_blank" rel="noopener">@nivoragalerie</a></figcaption>
+      </figure>
+
+      <figure class="quote">
+        <blockquote>“The logo came first, then the harder part: how a bilingual marketplace should sound to two very different audiences. The strategy was built before anything was made pretty — which is exactly why the pretty things worked.”</blockquote>
+        <figcaption><b>Tarienne</b>Bilingual vendor marketplace</figcaption>
+      </figure>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="section contact" id="contact">
+  <div class="wrap">
+    <h2>Make your mark in the <em>digital</em> world.</h2>
+    <p>We take on a limited number of accounts at a time. Tell us what you're building and we'll tell you what we'd do first.</p>
+    <div class="cta-row">
+      <a class="btn btn-solid" href="mailto:thequirkythinkers@gmail.com?subject=Project%20enquiry%20—%20The%20Quirky%20Thinkers">Work with us</a>
+      <a class="btn btn-ghost" href="https://www.instagram.com/quirkythinkers/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div>© 2026 The Quirky Thinkers · Marketing with a twist of creativity</div>
+    <div>
+      <a href="mailto:thequirkythinkers@gmail.com">thequirkythinkers@gmail.com</a>
+      <a href="https://www.instagram.com/quirkythinkers/" target="_blank" rel="noopener">@quirkythinkers</a>
+      <a href="https://www.linkedin.com/in/indu-prazad/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
